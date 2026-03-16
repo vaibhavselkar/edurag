@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     mongodb_db: str = "edurag"
     chroma_persist_dir: str = "../vector_store"
     upload_dir: str = "../uploads"
-    allowed_origins: str = "http://localhost:5173,http://localhost:3000"
+    allowed_origins: str = "http://localhost:5173,http://localhost:3000,https://edurag-nu.vercel.app,https://edurag-boss.vercel.app"
     secret_key: str = "change-me-in-production"
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 1440
