@@ -16,11 +16,20 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
+      console.log("Attempting login with:", form.email);
       const data = await loginApi(form.email, form.password);
+      console.log("Login response:", data);
+      
+      if (!data.access_token) {
+        throw new Error("No access token received");
+      }
+      
       login(data.access_token, data.user);
       toast.success(`Welcome back, ${data.user.name}!`);
       navigate("/dashboard");
     } catch (err) {
+      console.error("Login error:", err);
+      console.error("Error response:", err.response);
       toast.error(err.response?.data?.detail || "Login failed");
     } finally {
       setLoading(false);
