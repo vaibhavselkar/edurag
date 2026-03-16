@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Env files
+.env
+backend/.env
+
+# Uploads & vector store (large files)
+uploads/
+vector_store/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
